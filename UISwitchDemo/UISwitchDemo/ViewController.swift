@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var demoSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        demoSwitch.setOn(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func checkSwitch(sender: AnyObject) {
+        if demoSwitch.on{
+            println("开关状态：on")
+        }
+        else{
+            println("开关状态: off")
+        }
+    }
 
 }
 
